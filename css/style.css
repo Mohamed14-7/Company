@@ -30,6 +30,38 @@ a {
   margin-top: 10px;
 }
 
+/* Dark Mode*/
+.darkMode-btn {
+  position: absolute;
+  left: 4%;
+  top: 22%;
+}
+
+.btn {
+  padding: 20px;
+  width: 61px;
+  border-radius: 50px;
+  border: none;
+  background-color: #111;
+  position: relative;
+  cursor: pointer;
+}
+.btn .ball {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  border-radius: 50%;
+}
+
+.right-dk {
+  right: 2px;
+  background-color: #ddd;
+}
+
+/* Dark Mode*/
 /* End Global*/
 /* Start Header*/
 .main-header {
@@ -61,6 +93,9 @@ a {
   height: 152px;
   transform: translate(-50%, 0);
 }
+.main-header .nav .menu {
+  display: none;
+}
 .main-header .nav .icons {
   display: flex;
   gap: 15px;
@@ -72,12 +107,18 @@ a {
   background-color: transparent;
   border: 1px solid #fff;
   font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .main-header .nav .icons a i {
   padding: 8px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.main-header .nav .icons a.listIcon {
+  display: none;
 }
 
 @media (max-width: 991px) {
@@ -89,8 +130,56 @@ a {
     width: 115px;
     height: 100px;
   }
-  .main-header .nav .icons {
+  .main-header .nav .menu {
+    width: 100%;
+    height: 100%;
+    background-color: #373737;
+    right: -100%;
+    top: 0;
+    z-index: 55;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  .main-header .nav .menu a.close {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .main-header .nav .menu .list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    margin-top: 50px;
+  }
+  .main-header .nav .menu .list li {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+    padding: 5px;
+  }
+  .main-header .nav .menu .list li a {
+    color: #fff;
+    font-size: 30px;
+    display: block;
+  }
+  .main-header .nav .icons a {
     display: none;
+  }
+  .main-header .nav .icons a.listIcon {
+    color: #fFF;
+    display: block;
+    font-size: 35px;
+    border: 0;
+    font-size: 30px;
   }
 }
 /* End Header*/
@@ -145,14 +234,18 @@ a {
   top: 0px;
   height: 113px;
   transform: skewX(-22deg);
+  z-index: -1;
 }
 
 @media (max-width: 991px) {
+  .section-we .container {
+    display: flex;
+    justify-content: center;
+  }
   .section-we .container .content {
     width: 300px;
     opacity: 0.8;
     text-align: center;
-    margin: 240px auto 0;
   }
   .section-we .container .content h2 {
     font-size: 25px;
@@ -262,9 +355,14 @@ a {
   color: #705fa1;
 }
 .projects .container .all .box .info p {
+  text-align: justify;
   line-height: 1.4;
   font-size: 16px;
   margin-top: 10px;
+  margin-bottom: 15px;
+}
+.projects .container .all .box .img img {
+  height: 100%;
 }
 
 @media (max-width: 991px) {
@@ -302,11 +400,14 @@ section.company .content .info span {
   font-size: 20px;
   display: block;
   margin-bottom: 24px;
+  width: 90%;
 }
 section.company .content .info p {
-  font-size: 25px;
+  font-size: 21px;
   margin-bottom: 50px;
   margin-top: 50px;
+  width: 90%;
+  text-align: justify;
 }
 section.company .content .info button {
   display: inline-block;
@@ -677,32 +778,4 @@ footer p {
   color: #fff;
 }
 
-.darkMode-btn {
-  position: absolute;
-  left: 4%;
-  top: 22%;
-}
-
-.btn {
-  padding: 20px;
-  width: 61px;
-  border-radius: 50px;
-  border: none;
-  background-color: #111;
-  position: relative;
-  cursor: pointer;
-}
-.btn .ball {
-  width: 30px;
-  height: 30px;
-  background-color: #fff;
-  position: absolute;
-  top: 4px;
-  left: 2px;
-  border-radius: 50%;
-}
-
-.right-dk {
-  right: 2px;
-  background-color: #ddd;
-}/*# sourceMappingURL=style.css.map */
+/*End Dark Mode *//*# sourceMappingURL=style.css.map */
